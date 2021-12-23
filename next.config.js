@@ -5,7 +5,7 @@ module.exports = {
     domains: ['avatars.githubusercontent.com'],
   },
   i18n: {
-    locales: ['en', 'pt'],
-    defaultLocale: 'en',
+    locales: ['en-us', 'pt-br'],
+    defaultLocale: 'en-us',
   },
 }
