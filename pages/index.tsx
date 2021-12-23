@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router';
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
-import github_logo from '../public/images/GitHub-Logo.svg'
-import instagram_logo from '../public/images/Instagram-Logo.svg'
-import linkedin_logo from '../public/images/LinkedIn-Icon-Logo.svg'
 
+import styles from '../styles/Home.module.css'
+import Profile from '../components/profile';
+import PathsGrid from '../components/pathsGrid';
+import SMGrid from '../components/SMGrid';
+import Footer from '../components/footer';
 
 export async function getStaticProps() {
   const res = await fetch('https://api.github.com/users/thiagolauter')
@@ -20,6 +20,8 @@ export async function getStaticProps() {
 }
 
 const Home: NextPage = ({ user }: any) => {
+  const { locale } = useRouter();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -27,109 +29,17 @@ const Home: NextPage = ({ user }: any) => {
         <meta name="description" content="My space" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
-        <div className={styles.image}>
-          <Image
-            src={user.avatar_url}
-            alt="Picture of the author"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-
-        <h1 className={styles.title}>
-          Thiago Lauter
-        </h1>
-
-        <p className={styles.description}>
-          I am a problem solver, Programmer & Web developer.
-        </p>
-
-        <div className={styles.grid}>
-          <Link href="/cv">
-          <a className={styles.card}>
-            <h2>CV &rarr;</h2>
-            <p>Here you can find my curriculum vitae. &#128521;</p>
-          </a>
-          </Link>
-        </div>
-        {/* 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div> */}
-
-        <div className={styles.socialMedia}>
-          <ul>
-            <li>
-              <a href="https://www.linkedin.com/in/thiagolauter/">
-                <Image
-                  src={linkedin_logo}
-                  alt="LinkedIn"
-                  width={72} height={72}
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/thiagolauter">
-                <Image
-                  src={github_logo}
-                  alt="GitHub"
-                  width={72} height={72}
-                />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/thiago_lauter/">
-                <Image
-                  src={instagram_logo}
-                  alt="Instagram"
-                  width={72} height={72}
-                />
-              </a>
-            </li>
-          </ul>
-        </div>
+        <Profile props={{
+          avatar_url: user.avatar_url,
+          locale: locale,
+        }} />
+        <PathsGrid props={{
+          locale: locale
+        }} />
+        <SMGrid />
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <Footer />
     </div>
   )
 }
