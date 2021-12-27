@@ -1,14 +1,15 @@
 import Image from 'next/image'
-import styles from '/styles/Home.module.css'
+import styles from './style.module.css'
 import content from './locales/locales.json'
 
 function Profile({ props }: any) {
+  const { avatar_url, locale } = props
 
   return (
     <>
       <div className={styles.image}>
         <Image
-          src={props.avatar_url}
+          src={avatar_url}
           alt="Picture of the author"
           layout="fill"
           objectFit="cover"
@@ -21,7 +22,7 @@ function Profile({ props }: any) {
       </h1>
 
       <p className={styles.description}>
-        {content[props.locale].description}
+        {content[locale].description}
       </p>
     </>
   )
