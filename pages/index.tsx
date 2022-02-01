@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Header from '../components/header';
-import Profile from '../components/profile';
-import PathsGrid from '../components/pathsGrid';
-import SMGrid from '../components/SMGrid';
-import Footer from '../components/footer';
+import Header from '../components/header'
+import Profile from '../components/profile'
+import PathsGrid from '../components/pathsGrid'
+import SMGrid from '../components/SMGrid'
+import Footer from '../components/footer'
 
 export async function getStaticProps() {
   const res = await fetch('https://api.github.com/users/thiagolauter', {
@@ -26,7 +26,7 @@ export async function getStaticProps() {
 }
 
 const Home: NextPage = ({ user }: any) => {
-  const { locale } = useRouter();
+  const { locale } = useRouter()
   const { avatar_url } = user
 
   return (
