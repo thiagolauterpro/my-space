@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 import github from '../public/icons/github-line.svg'
-import linkedin from '../public/icons/linkedin-line.svg'
+import linkedin from '../public/icons/linkedin-box-line.svg'
 import instagram from '../public/icons/instagram-line.svg'
 import opensource from '../public/icons/open-source-line.svg'
 
