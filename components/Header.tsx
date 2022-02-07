@@ -1,7 +1,7 @@
-import Image from "next/image";
-import styled from "styled-components";
-import { useRouter } from "next/router";
-import logobaw from "/public/images/logobaw.png";
+import Image from 'next/image'
+import styled from 'styled-components'
+import { useRouter } from 'next/router'
+import logobaw from '/public/images/logobaw.png'
 
 const Container = styled.header`
   display: flex;
@@ -26,24 +26,24 @@ const Container = styled.header`
 
   @media (min-width: 700px) {
   }
-`;
+`
 
 function flag(locale: string): string {
-  if (locale === "en-us") {
+  if (locale === 'en-us') {
     return (
-      String.fromCodePoint(parseInt("0x1F1E7")) +
-      String.fromCodePoint(parseInt("0x1F1F7"))
-    );
+      String.fromCodePoint(parseInt('0x1F1E7')) +
+      String.fromCodePoint(parseInt('0x1F1F7'))
+    )
   }
   return (
-    String.fromCodePoint(parseInt("0x1F1FA")) +
-    String.fromCodePoint(parseInt("0x1F1F8"))
-  );
+    String.fromCodePoint(parseInt('0x1F1FA')) +
+    String.fromCodePoint(parseInt('0x1F1F8'))
+  )
 }
 
 export default function Header({ props }) {
-  const { locale } = props;
-  const router = useRouter();
+  const { locale } = props
+  const router = useRouter()
 
   return (
     <Container>
@@ -53,15 +53,15 @@ export default function Header({ props }) {
       <button
         className="flag"
         onClick={() => {
-          if (locale === "pt-br") {
-            router.push("/", "/", { locale: "en-us" });
+          if (locale === 'pt-br') {
+            router.push('/', '/', { locale: 'en-us' })
           } else {
-            router.push("/", "/", { locale: "pt-br" });
+            router.push('/', '/', { locale: 'pt-br' })
           }
         }}
       >
         {flag(locale)}
       </button>
     </Container>
-  );
+  )
 }
