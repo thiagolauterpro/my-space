@@ -3,13 +3,13 @@ import styles from './style.module.css'
 import content from './locales/locales.json'
 
 function Profile({ props }: any) {
-  const { avatar_url, locale } = props
+  const { locale } = props
 
   return (
     <>
       <div className={styles.image}>
         <Image
-          src={avatar_url}
+          src="https://avatars.githubusercontent.com/u/50457461?v=4"
           alt="Picture of the author"
           layout="fill"
           objectFit="cover"
