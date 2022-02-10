@@ -4,16 +4,26 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import Header from '../components/Header'
 import Image from 'next/dist/client/image'
-import PathsGrid from '../components/pathsGrid'
+import Link from 'next/dist/client/link'
 import Footer from '../components/Footer'
 
 const content = {
   'en-us': {
-    description: 'I am a problem solver, Programmer & Web developer.',
+    profile: {
+      description: 'I am a problem solver, Programmer & Web developer.',
+    },
+    paths: [
+      { title: 'CV', descripition: 'Here you can find my curriculum vitae.' },
+    ],
   },
   'pt-br': {
-    description:
-      'Sou um solucionador de problemas, programador & desenvolvedor Web.',
+    profile: {
+      description:
+        'Sou um solucionador de problemas, programador & desenvolvedor Web.',
+    },
+    paths: [
+      { title: 'CV', descripition: 'Aqui você encontra meu curriculum vitae.' },
+    ],
   },
 }
 
@@ -45,12 +55,18 @@ const Home: NextPage = () => {
 
         <h1 className="title">Thiago Lauter</h1>
 
-        <p className="description">{content[locale].description}</p>
-        <PathsGrid
-          props={{
-            locale: locale,
-          }}
-        />
+        <p className="description">{content[locale].profile.description}</p>
+        <div className="grid">
+          <Link href="/cv">
+            <a className="card">
+              <h2>{content[locale].paths[0].title} &rarr;</h2>
+              <p>
+                {content[locale].paths[0].descripition +
+                  String.fromCodePoint(parseInt('0x1F609'))}
+              </p>
+            </a>
+          </Link>
+        </div>
       </Main>
       <Footer />
     </>
@@ -85,6 +101,43 @@ const Main = styled.main`
   .description {
     margin: 0 1em 1.5em 1em;
     font-size: 1.5rem;
+  }
+
+  .grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+  }
+
+  .card {
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    max-width: 300px;
+  }
+
+  .card:hover,
+  .card:focus,
+  .card:active {
+    color: #0070f3;
+    border-color: #0070f3;
+  }
+
+  .card h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  .card p {
+    margin: 0;
+    font-size: 1.25rem;
   }
 `
 
