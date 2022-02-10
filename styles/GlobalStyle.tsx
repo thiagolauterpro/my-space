@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     transition: all 0.25s linear;
     
     :root{
-        font-size: 62.5%;
+        font-size: 0.8rem;
     }
 
     * {

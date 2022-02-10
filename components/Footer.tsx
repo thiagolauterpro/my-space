@@ -6,8 +6,6 @@ import instagram from '../public/icons/instagram-line.svg'
 import opensource from '../public/icons/open-source-line.svg'
 
 const Container = styled.footer`
-  bottom: 0;
-  position: fixed;
   height: 10vh;
   width: 100vw;
   display: flex;

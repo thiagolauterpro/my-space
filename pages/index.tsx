@@ -31,7 +31,7 @@ const Home: NextPage = () => {
   const { locale } = useRouter()
 
   return (
-    <>
+    <Container>
       <Head>
         <title>Thiago Lauter</title>
         <meta name="description" content="My space" />
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
           locale: locale,
         }}
       />
-      <Main>
+      <main>
         <div className="container-image">
           <Image
             src="https://avatars.githubusercontent.com/u/50457461?v=4"
@@ -67,19 +67,22 @@ const Home: NextPage = () => {
             </a>
           </Link>
         </div>
-      </Main>
+      </main>
       <Footer />
-    </>
+    </Container>
   )
 }
 
-const Main = styled.main`
-  width: auto;
-  padding: 1rem 4%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+const Container = styled.body`
+  main {
+    width: auto;
+    min-height: 80vh;
+    padding: 1rem 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   .container-image {
     overflow: hidden;
