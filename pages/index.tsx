@@ -1,57 +1,91 @@
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Header from '../components/header'
-import Profile from '../components/profile'
+import styled from 'styled-components'
+import Header from '../components/Header'
+import Image from 'next/dist/client/image'
 import PathsGrid from '../components/pathsGrid'
-import SMGrid from '../components/SMGrid'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 
-export async function getStaticProps() {
-  const res = await fetch('https://api.github.com/users/thiagolauter', {
-    "method": "GET",
-    "headers": {
-      "cookie": "_octo=GH1.1.1352885215.1640568972; logged_in=no",
-      "Authorization": "Basic dGhpYWdvbGF1dGVyOg=="
-    }
-  })
-  const user = await res.json()
-
-  return {
-    props: {
-      user,
-    },
-  }
+const content = {
+  'en-us': {
+    description: 'I am a problem solver, Programmer & Web developer.',
+  },
+  'pt-br': {
+    description:
+      'Sou um solucionador de problemas, programador & desenvolvedor Web.',
+  },
 }
 
-const Home: NextPage = ({ user }: any) => {
+const Home: NextPage = () => {
   const { locale } = useRouter()
-  const { avatar_url } = user
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Thiago Lauter</title>
         <meta name="description" content="My space" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header props={{
-        locale: locale,
-      }} />
-      <main className={styles.main}>
-        <Profile props={{
-          avatar_url: avatar_url,
+      <Header
+        props={{
           locale: locale,
-        }} />
-        <PathsGrid props={{
-          locale: locale
-        }} />
-        <SMGrid />
-      </main>
+        }}
+      />
+      <Main>
+        <div className="container-image">
+          <Image
+            src="https://avatars.githubusercontent.com/u/50457461?v=4"
+            alt="Picture of the author"
+            layout="fill"
+            objectFit="cover"
+            priority={true}
+          />
+        </div>
+
+        <h1 className="title">Thiago Lauter</h1>
+
+        <p className="description">{content[locale].description}</p>
+        <PathsGrid
+          props={{
+            locale: locale,
+          }}
+        />
+      </Main>
       <Footer />
-    </div>
+    </>
   )
 }
+
+const Main = styled.main`
+  width: auto;
+  padding: 1rem 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .container-image {
+    overflow: hidden;
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+  }
+
+  .title,
+  .description {
+    text-align: center;
+  }
+
+  .title {
+    margin: 0.5em 0 1rem 0;
+  }
+
+  .description {
+    margin: 0 1em 1.5em 1em;
+    font-size: 1.5rem;
+  }
+`
 
 export default Home
