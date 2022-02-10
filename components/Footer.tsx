@@ -12,34 +12,42 @@ const Container = styled.footer`
   justify-content: space-evenly;
   align-items: center;
 
-  a{
+  a {
     display: flex;
   }
-`;
+`
 
 export default function Footer() {
   return (
     <Container>
       <a
         href="https://github.com/thiagolauter"
-        target="_blank">
+        target="_blank"
+        rel="noreferrer"
+      >
         <Image src={github} />
       </a>
       <a
         href="https://www.linkedin.com/in/thiagolauter/"
-        target="_blank">
+        target="_blank"
+        rel="noreferrer"
+      >
         <Image src={linkedin} />
       </a>
       <a
         href="https://www.instagram.com/thiago_lauter/"
-        target="_blank">
+        target="_blank"
+        rel="noreferrer"
+      >
         <Image src={instagram} />
       </a>
       <a
         href="https://github.com/thiagolauter/my-space"
-        target="_blank">
+        target="_blank"
+        rel="noreferrer"
+      >
         <Image src={opensource} />
       </a>
     </Container>
-  );
+  )
 }
