@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/dist/client/link'
 import { useRouter } from 'next/router'
-import logo from '/public/images/logo.svg'
+import logo from '/public/images/logo.png'
 
 function flag(locale: string): string {
   if (locale === 'en-us') {
