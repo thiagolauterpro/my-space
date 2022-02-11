@@ -14,7 +14,12 @@ export default function Footer() {
         rel="noreferrer"
       >
         <span>GitHub</span>
-        <Image src={github} alt="GitHub logo" layout="fill" />
+        <Image
+          src={github}
+          alt="GitHub logo"
+          height={32}
+          width={32}
+        />
       </a>
       <a
         href="https://www.linkedin.com/in/thiagolauter/"
@@ -22,7 +27,12 @@ export default function Footer() {
         rel="noreferrer"
       >
         <span>LinkedIn</span>
-        <Image src={linkedin} alt="LinkedIn logo" layout="fill" />
+        <Image
+          src={linkedin}
+          alt="LinkedIn logo"
+          height={32}
+          width={32}
+        />
       </a>
       <a
         href="https://www.instagram.com/thiago_lauter/"
@@ -30,7 +40,12 @@ export default function Footer() {
         rel="noreferrer"
       >
         <span>Instagram</span>
-        <Image src={instagram} alt="Instagram logo" layout="fill" />
+        <Image
+          src={instagram}
+          alt="Instagram logo"
+          height={32}
+          width={32}
+        />
       </a>
       <a
         href="https://github.com/thiagolauter/my-space"
@@ -38,7 +53,12 @@ export default function Footer() {
         rel="noreferrer"
       >
         <span>Source Code</span>
-        <Image src={opensource} alt="Open source logo" layout="fill" />
+        <Image
+          src={opensource}
+          alt="Open source logo"
+          height={32}
+          width={32}
+       />
       </a>
     </Container>
   )
@@ -54,8 +74,6 @@ const Container = styled.footer`
   a {
     display: flex;
     aspect-ratio: 1 / 1;
-    height: 24px;
-    position: relative;
   }
 
   a > span {
@@ -65,8 +83,5 @@ const Container = styled.footer`
   @media (min-width: 700px) {
     padding: 0 10vw;
 
-    a{
-      height: 30px;
-    }
   }
 `
