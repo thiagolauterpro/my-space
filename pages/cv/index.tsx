@@ -1,12 +1,21 @@
 import type { NextPage } from 'next'
+import styled from 'styled-components'
 
 const Cv: NextPage = () => {
-    return (
-        <>
-        <h1>cv</h1>
-        <p>I am bulding hehe.</p>
-        </>
-     )
+  return (
+    <Container>
+      <h1>cv</h1>
+      <p>
+        Hey! I&apos;m <span className="line-through">walking</span> building here.
+      </p>
+    </Container>
+  )
 }
+
+const Container = styled.main`
+  .line-through {
+    text-decoration: line-through;
+  }
+`
 
 export default Cv
