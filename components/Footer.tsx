@@ -5,6 +5,45 @@ import linkedin from '../public/icons/linkedin-box-line.svg'
 import instagram from '../public/icons/instagram-line.svg'
 import opensource from '../public/icons/open-source-line.svg'
 
+export default function Footer() {
+  return (
+    <Container>
+      <a
+        href="https://github.com/thiagolauter"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span>GitHub</span>
+        <Image src={github} alt="GitHub logo" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/thiagolauter/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span>LinkedIn</span>
+        <Image src={linkedin} alt="LinkedIn logo" />
+      </a>
+      <a
+        href="https://www.instagram.com/thiago_lauter/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span>Instagram</span>
+        <Image src={instagram} alt="Instagram logo" />
+      </a>
+      <a
+        href="https://github.com/thiagolauter/my-space"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span>Source Code</span>
+        <Image src={opensource} alt="Open source logo" />
+      </a>
+    </Container>
+  )
+}
+
 const Container = styled.footer`
   height: 10vh;
   width: 100vw;
@@ -15,39 +54,8 @@ const Container = styled.footer`
   a {
     display: flex;
   }
-`
 
-export default function Footer() {
-  return (
-    <Container>
-      <a
-        href="https://github.com/thiagolauter"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Image src={github} />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/thiagolauter/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Image src={linkedin} />
-      </a>
-      <a
-        href="https://www.instagram.com/thiago_lauter/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Image src={instagram} />
-      </a>
-      <a
-        href="https://github.com/thiagolauter/my-space"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Image src={opensource} />
-      </a>
-    </Container>
-  )
-}
+  a > span {
+    display: none;
+  }
+`
