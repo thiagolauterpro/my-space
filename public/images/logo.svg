@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/lauter/Dev/node/my-space/public/images/logo.png"
+   inkscape:export-xdpi="12.000001"
+   inkscape:export-ydpi="12.000001"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,15 +28,15 @@
      showgrid="false"
      units="px"
      height="108px"
-     inkscape:zoom="0.30842107"
-     inkscape:cx="682.50849"
-     inkscape:cy="356.65527"
+     inkscape:zoom="0.37781581"
+     inkscape:cx="445.98451"
+     inkscape:cy="415.5464"
      inkscape:window-width="1366"
      inkscape:window-height="699"
      inkscape:window-x="0"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer3" />
   <defs
      id="defs2">
     <rect
@@ -52,7 +55,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     sodipodi:insensitive="true">
     <circle
        style="fill:#000000;fill-rule:evenodd;stroke-width:0.26422"
        id="path67"
@@ -72,29 +76,29 @@
      inkscape:label="L"
      sodipodi:insensitive="true">
     <g
-       id="g84940"
-       transform="translate(6.5427828,-4.3373899)">
+       id="g667"
+       transform="translate(-0.26458514,-1.0583204)">
       <text
          xml:space="preserve"
-         transform="matrix(0.26458333,0,0,0.26458333,-28.551807,-27.495421)"
+         transform="matrix(0.26458333,0,0,0.26458333,-22.009024,-31.832811)"
          id="text6941"
          style="font-style:normal;font-weight:normal;font-size:810px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6943-3);display:inline;fill:#ffffff;fill-opacity:1;stroke:none"><tspan
            x="240.93555"
            y="863.02344"
-           id="tspan88031"><tspan
+           id="tspan686"><tspan
              style="font-style:italic;font-weight:bold;font-family:'MesloLGS NF';-inkscape-font-specification:'MesloLGS NF Bold Italic'"
-             id="tspan88029">T</tspan></tspan></text>
+             id="tspan684">T</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:214.312px;line-height:1.25;font-family:'MesloLGS NF';-inkscape-font-specification:'MesloLGS NF Bold Italic';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="93.206718"
-         y="234.99657"
+         x="100.27867"
+         y="232.77582"
          id="text64966"><tspan
            sodipodi:role="line"
            id="tspan64964"
            style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:214.312px;font-family:'MesloLGS NF';-inkscape-font-specification:'MesloLGS NF Bold Italic';fill:#ffffff;stroke-width:0.264583"
-           x="93.206718"
-           y="234.99657">L</tspan></text>
+           x="100.27867"
+           y="232.77582">L</tspan></text>
     </g>
   </g>
 </svg>
