@@ -6,7 +6,7 @@ const Cv: NextPage = () => {
     <Container>
       <h1>cv</h1>
       <p>
-        Hey! I'm <span className="line-through">walking</span> building here.
+        Hey! I&apos;m <span className="line-through">walking</span> building here.
       </p>
     </Container>
   )
