@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/dist/client/link'
 import { useRouter } from 'next/router'
-import logobaw from '/public/images/logobaw.png'
+import logo from '/public/images/logo.svg'
 
 function flag(locale: string): string {
   if (locale === 'en-us') {
@@ -26,7 +26,7 @@ export default function Header({ props }) {
       <Link href="/">
         <a>
           <span>Home</span>
-          <Image src={logobaw} priority={true} alt="logo do site" />
+          <Image src={logo} priority={true} alt="logo do site" />
         </a>
       </Link>
       <button

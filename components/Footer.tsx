@@ -14,7 +14,7 @@ export default function Footer() {
         rel="noreferrer"
       >
         <span>GitHub</span>
-        <Image src={github} alt="GitHub logo" />
+        <Image src={github} alt="GitHub logo" layout="fill" />
       </a>
       <a
         href="https://www.linkedin.com/in/thiagolauter/"
@@ -22,7 +22,7 @@ export default function Footer() {
         rel="noreferrer"
       >
         <span>LinkedIn</span>
-        <Image src={linkedin} alt="LinkedIn logo" />
+        <Image src={linkedin} alt="LinkedIn logo" layout="fill" />
       </a>
       <a
         href="https://www.instagram.com/thiago_lauter/"
@@ -30,7 +30,7 @@ export default function Footer() {
         rel="noreferrer"
       >
         <span>Instagram</span>
-        <Image src={instagram} alt="Instagram logo" />
+        <Image src={instagram} alt="Instagram logo" layout="fill" />
       </a>
       <a
         href="https://github.com/thiagolauter/my-space"
@@ -38,7 +38,7 @@ export default function Footer() {
         rel="noreferrer"
       >
         <span>Source Code</span>
-        <Image src={opensource} alt="Open source logo" />
+        <Image src={opensource} alt="Open source logo" layout="fill" />
       </a>
     </Container>
   )
@@ -53,9 +53,20 @@ const Container = styled.footer`
 
   a {
     display: flex;
+    aspect-ratio: 1 / 1;
+    height: 24px;
+    position: relative;
   }
 
   a > span {
     display: none;
+  }
+
+  @media (min-width: 700px) {
+    padding: 0 10vw;
+
+    a{
+      height: 30px;
+    }
   }
 `
