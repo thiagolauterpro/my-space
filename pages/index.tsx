@@ -1,11 +1,12 @@
 import type { NextPage } from 'next'
-import { useRouter } from 'next/router'
 import Head from 'next/head'
 import styled from 'styled-components'
 import Header from '../components/Header'
 import Image from 'next/dist/client/image'
 import Link from 'next/dist/client/link'
 import Footer from '../components/Footer'
+import { useContext } from 'react';
+import AppContext from '../contexts/AppContext';
 
 const content = {
   'en-us': {
@@ -28,7 +29,8 @@ const content = {
 }
 
 const Home: NextPage = () => {
-  const { locale } = useRouter()
+  const value = useContext(AppContext);
+  const { locale } = value.state;
 
   return (
     <Container>

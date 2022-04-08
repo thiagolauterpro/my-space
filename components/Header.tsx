@@ -1,25 +1,28 @@
-import Image from 'next/image'
-import styled from 'styled-components'
-import Link from 'next/dist/client/link'
-import { useRouter } from 'next/router'
-import logo from '/public/images/logo.png'
+import Image from 'next/image';
+import styled from 'styled-components';
+import Link from 'next/dist/client/link';
+import logo from '/public/images/logo.png';
+import AppContext from '../contexts/AppContext';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
 
-function flag(locale: string): string {
+function flag(locale): string {
   if (locale === 'en-us') {
     return (
       String.fromCodePoint(parseInt('0x1F1E7')) +
       String.fromCodePoint(parseInt('0x1F1F7'))
-    )
+    );
   }
   return (
     String.fromCodePoint(parseInt('0x1F1FA')) +
     String.fromCodePoint(parseInt('0x1F1F8'))
-  )
+  );
 }
 
 export default function Header({ props }) {
-  const { locale } = props
-  const router = useRouter()
+  const value = useContext(AppContext);
+  const { locale } = value.state;
+  const router = useRouter();
 
   return (
     <Container>
@@ -33,16 +36,16 @@ export default function Header({ props }) {
         className="flag"
         onClick={() => {
           if (locale === 'pt-br') {
-            router.push('/', '/', { locale: 'en-us' })
+            value.setLocale('en-us');
           } else {
-            router.push('/', '/', { locale: 'pt-br' })
+            value.setLocale('pt-br');
           }
         }}
       >
         {flag(locale)}
       </button>
     </Container>
-  )
+  );
 }
 
 const Container = styled.header`
@@ -72,4 +75,4 @@ const Container = styled.header`
 
   @media (min-width: 700px) {
   }
-`
+`;
