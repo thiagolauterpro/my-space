@@ -2,9 +2,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Link from 'next/dist/client/link';
 import logo from '/public/images/logo.png';
-import AppContext from '../contexts/AppContext';
 import { useRouter } from 'next/router';
-import { useContext } from 'react';
 
 function flag(locale): string {
   if (locale === 'en-us') {
@@ -19,10 +17,9 @@ function flag(locale): string {
   );
 }
 
-export default function Header({ props }) {
-  const value = useContext(AppContext);
-  const { locale } = value.state;
+export default function Header() {
   const router = useRouter();
+  const locale = router.locale;
 
   return (
     <Container>
@@ -36,9 +33,9 @@ export default function Header({ props }) {
         className="flag"
         onClick={() => {
           if (locale === 'pt-br') {
-            value.setLocale('en-us');
+            router.push(router.pathname, router.pathname, { locale: 'en-us' });
           } else {
-            value.setLocale('pt-br');
+            router.push(router.pathname, router.pathname, { locale: 'pt-br' });
           }
         }}
       >
