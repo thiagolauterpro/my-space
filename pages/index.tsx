@@ -1,11 +1,11 @@
-import type { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import styled from 'styled-components';
-import Header from '../components/Header';
-import Image from 'next/dist/client/image';
-import Link from 'next/dist/client/link';
-import Footer from '../components/Footer';
+import Head from 'next/head'
+import styled from 'styled-components'
+import Image from 'next/dist/client/image'
+import Link from 'next/dist/client/link'
+import { useRouter } from 'next/router'
+import {Header} from '../components/Header'
+import { Footer } from '../components/Footer'
+import type { NextPage } from 'next'
 
 const content = {
   'en-us': {
@@ -25,10 +25,10 @@ const content = {
       { title: 'CV', descripition: 'Aqui você encontra meu curriculum vitae.' },
     ],
   },
-};
+}
 
 const Home: NextPage = () => {
-  const { locale } = useRouter();
+  const { locale } = useRouter()
 
   return (
     <Container>
@@ -37,7 +37,11 @@ const Home: NextPage = () => {
         <meta name="description" content="My space" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header
+        props={{
+          locale: locale,
+        }}
+      />
       <main>
         <div className="container-image">
           <Image
@@ -45,7 +49,6 @@ const Home: NextPage = () => {
             alt="Picture of the author"
             layout="fill"
             objectFit="cover"
-            priority={true}
           />
         </div>
 
@@ -66,8 +69,8 @@ const Home: NextPage = () => {
       </main>
       <Footer />
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.body`
   main {
@@ -138,6 +141,6 @@ const Container = styled.body`
     margin: 0;
     font-size: 1.25rem;
   }
-`;
+`
 
-export default Home;
+export default Home

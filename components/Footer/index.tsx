@@ -1,11 +1,11 @@
 import Image from 'next/image'
-import styled from 'styled-components'
-import github from '../public/icons/github-line.svg'
-import linkedin from '../public/icons/linkedin-box-line.svg'
-import instagram from '../public/icons/instagram-line.svg'
-import opensource from '../public/icons/open-source-line.svg'
+import github from '../../public/icons/github-line.svg'
+import linkedin from '../../public/icons/linkedin-box-line.svg'
+import instagram from '../../public/icons/instagram-line.svg'
+import opensource from '../../public/icons/open-source-line.svg'
+import { Container } from './styles'
 
-export default function Footer() {
+export function Footer() {
   return (
     <Container>
       <a
@@ -64,24 +64,4 @@ export default function Footer() {
   )
 }
 
-const Container = styled.footer`
-  height: 10vh;
-  width: 100vw;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 
-  a {
-    display: flex;
-    aspect-ratio: 1 / 1;
-  }
-
-  a > span {
-    display: none;
-  }
-
-  @media (min-width: 700px) {
-    padding: 0 10vw;
-
-  }
-`

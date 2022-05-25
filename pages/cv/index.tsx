@@ -1,5 +1,5 @@
-import type { NextPage } from 'next'
 import styled from 'styled-components'
+import type { NextPage } from 'next'
 
 const Cv: NextPage = () => {
   return (
